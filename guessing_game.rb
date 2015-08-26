@@ -1,14 +1,17 @@
 numb = rand(100)
-puts numb
 puts "Guess a number between 0 and 100"
-guess = gets
+guess = gets.chomp.to_i
 
-# while (true)
-#   if numb > rand(100)
-#   puts "Your guess is too high, guess again"
-#   else numb < rand(100)
-#       puts "Your guess is too low, guess again"
-#   elsif numb = rand(100)
-#       puts "Your guess is correct"
-#   break
-# end
+while (true)
+  if guess > numb
+    puts "Your guess is too high, guess again"
+  elsif guess == numb
+    puts "Your guess is correct"
+    break
+  else guess < numb
+    puts "Your guess is too low, guess again"
+  end
+
+  puts "Try again"
+  guess = gets.chomp.to_i
+end
